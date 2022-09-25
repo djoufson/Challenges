@@ -1,0 +1,45 @@
+﻿@page "/"
+@using System.ComponentModel.DataAnnotations
+<section class="page-section">
+    <div class="form-container">
+        <div class="left">
+            <h2>Instructions</h2>
+            <p>
+                t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            </p>
+        </div>
+        <div class="right">
+            <h2>Personal Informations</h2>
+            <div class="form">
+                <Input @bind-Value="@Name" ErrorText="@ErrorText" PlaceHolder="Enter Name"/>
+                <Input @bind-Value="@Matricule" ErrorText="@ErrorText" PlaceHolder="Enter Matricule Number"/>
+                <Input @bind-Value="@Departement" ErrorText="@ErrorText" PlaceHolder="Enter Department"/>
+                <div class="flex">
+                    <select title="Academic Year">
+                        <option>Academic Year</option>
+                        <option>2010</option>
+                        <option>2011</option>
+                        <option>2012</option>
+                    </select>
+                    <Input @bind-Value="@Semester" ErrorText="@ErrorText" PlaceHolder="Semester"/>
+                </div>
+                <button>Proceed</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code{
+    public string? Name { get; set; }
+    public string? Matricule { get; set; }
+    public string? Departement { get; set; }
+    public string? Semester { get; set; }
+    string ErrorText = "This field cannot be empty";
+    public bool IsFormValid { get; set; }
+
+    public void ValidateForm()
+    {
+        IsFormValid = false;
+        // ...
+    }
+}

@@ -1,0 +1,22 @@
+.input-razor{
+    display: block;
+}
+.input-razor input{
+    width: 100%;
+    display: block;
+}
+.input-razor label{
+    font-size: 12px;
+    color: red;
+    padding: 0;
+    margin: 3px;
+}
+
+.required{
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.required:focus{
+    border: 1px solid rgb(255, 0, 0);
+    outline: none;
+}

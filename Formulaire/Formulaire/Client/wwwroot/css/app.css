@@ -1,0 +1,138 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+#blazor-error-ui{
+    display: none;
+}
+
+/* Section */
+.page-section{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(/bgImage.png);
+    background-size: contain;
+}
+
+.form-container{
+    background-color: #F9F9F9;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    width: auto;
+    min-width: 945px;
+    height: auto;
+}
+
+.form-container h2{
+    color: #0B3C49;
+    margin-bottom: 18px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+}
+
+.left{
+    padding: 60px 28px;
+    background-image: url(/rectangle.png);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+}
+.left p{
+    color: white;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.right{
+    padding: 60px 50px;
+}
+
+.left{
+    width: 45%;
+    background-color: #3F93B2;
+}
+
+/* Form controls */
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form input, .form select, .form button{
+    padding: 24px 30px;
+}
+
+.form input, .form select{
+    background-color: #EDEDED;
+    border: none;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.form input:focus, .form select:focus{
+    outline: 1px solid #3f93b28a;
+    border: none;
+}
+
+.form>input{
+    display: block;
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+    gap: 15px;
+}
+.form select, .flex input{
+    width: 50%;
+}
+
+.form button{
+    color: #F9F9F9;
+    background-color: #0B3C49;
+    border-radius: 0;
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+.form button:active{
+    background-color: #104e5f;
+}
+
+/* Responsive */
+@media screen and (max-width:950px){
+    .form-container{
+        width: auto;
+        min-width: 160px;
+        height: auto;
+    }
+
+
+    .right{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .left{
+        display: none;
+    }
+
+    .flex{
+        flex-direction: column;
+    }
+
+    .flex select{
+        width: 100%;
+    }
+}

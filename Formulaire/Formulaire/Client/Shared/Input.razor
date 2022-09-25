@@ -1,0 +1,37 @@
+<div class="input-razor">
+    <input type="text" class="@InputClass" placeholder="@PlaceHolder" @bind-value="@Value">
+    @if (!IsFilled)
+    {
+        <label>@ErrorText</label>   
+    }
+</div>
+
+@code{
+    string _value = "";
+    public bool IsFilled { get; set; }
+    public string InputClass { get; set; } = "required";
+    
+    [Parameter]
+    public string? PlaceHolder { get; set; }
+
+    [Parameter]
+    public string? ErrorText { get; set; }
+    [Parameter]
+    public string? Value 
+    { 
+        get => _value; 
+        set
+        {
+            if(_value != value && value!=null)
+            {
+                _value = value;
+                ValueChanged.InvokeAsync(value);
+
+                IsFilled = !String.IsNullOrEmpty(Value);
+                InputClass = IsFilled ? "" : "required";
+            }
+        } 
+    }
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+}
